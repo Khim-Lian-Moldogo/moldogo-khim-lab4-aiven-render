@@ -11,7 +11,9 @@ class UserController extends Controller {
     public  function show_users()
     {
         $users = $this->UserModel->all();
-        ddt ($users, 'Users Tables');
-        $this->call->view('users');
+       
+        $this->call->view('users', [
+        'users' => $users
+    ]);
     }
 }
